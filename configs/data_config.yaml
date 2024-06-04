@@ -1,0 +1,14 @@
+num_cols:
+
+
+cat_cols:
+  - 'HomePlanet'
+
+bool_cols:
+
+date_cols:
+
+useless_cols:
+
+
+target_cols:

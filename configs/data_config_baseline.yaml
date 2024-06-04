@@ -1,0 +1,27 @@
+num_cols:
+  - 'Age'
+  - 'RoomService'
+  - 'FoodCourt'
+  - 'ShoppingMall'
+  - 'Spa'
+  - 'VRDeck'
+
+cat_cols:
+  - 'HomePlanet'
+  - 'Destination'
+
+bool_cols:
+  - 'CryoSleep'
+  - 'VIP'
+  - 'Transported'
+
+date_cols: []
+
+
+useless_cols:
+  - 'PassengerId'
+  - 'Cabin'
+  - 'Name'
+
+target_cols:
+  - 'Transported'
