@@ -6,5 +6,5 @@ class MetricsLogger:
         self.metrics = metrics
 
     def metrics_to_json(self, path):
-        with open(path, 'w+') as file:
+        with open(path + '.json', 'w+') as file:
             json.dump(self.metrics, file)

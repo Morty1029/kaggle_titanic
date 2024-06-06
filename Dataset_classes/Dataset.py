@@ -18,7 +18,8 @@ class Dataset:
         print('Dataset was created')
 
     def set_cols_from(self, path_to_config):
-        file_reader = FileReader(path_to_config)
+        file_reader = FileReader()
+        file_reader.set_path(path_to_config)
         config = file_reader.read_yaml()
         self.num_cols = config['num_cols']
         self.cat_cols = config['cat_cols']
@@ -59,14 +60,33 @@ class Dataset:
     def bool_cols_into_int(self):
         if self.df is not None and isinstance(self.df, pd.DataFrame):
             for col in self.bool_cols:
-                self.df[col] = self.df[col].apply(lambda x: 1 if x else 0)
+                self.bool_col_into_int(col)
         else:
             print('no_data')
+            return
         print('bool values were converted into 1 0')
+
+    def bool_col_into_int(self, col):
+        if self.df is not None and isinstance(self.df, pd.DataFrame):
+            if col is not None:
+                self.df[col] = self.df[col].apply(lambda x: 1 if x else 0)
+            else:
+                print('no col')
+        else:
+            print('no data')
+
+    def int_col_into_bool(self, col):
+        if self.df is not None and isinstance(self.df, pd.DataFrame):
+            if col is not None:
+                self.df[col] = self.df[col].apply(lambda x: x == 1)
+            else:
+                print('no col')
+        else:
+            print('no data')
 
     def feel_missing_values_default(self):
         for col in self.bool_cols + self.num_cols:
-            self.df[col].fillna(0, inplace=True)
+            self.df[col] = self.df[col].fillna(0)
         for col in self.cat_cols:
             self.df[col] = self.df[col].fillna('skipped')
         print('missing values were fel by default')

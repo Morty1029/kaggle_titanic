@@ -1,9 +1,12 @@
 import yaml
+from Decorators.patterns import singleton
 
 
+@singleton
 class FileReader:
-    def __init__(self, path):
-        self.path = path
+
+    def __init__(self):
+        self.path = None
 
     def set_path(self, path):
         self.path = path

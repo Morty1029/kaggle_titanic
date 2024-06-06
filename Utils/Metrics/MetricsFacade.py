@@ -8,7 +8,7 @@ class MetricsFacade:
                  y_test,
                  round_to=4,
                  classification=True,
-                 path='results\\catboost\\metrics\\catboost_test'):
+                 path='test_metrics'):
         self.predictions = predictions
         self.y_test = y_test
         self.round_to = round_to

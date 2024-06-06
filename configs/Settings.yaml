@@ -1,2 +1,5 @@
 get_report: False
-draw_origin_graphs: True
+draw_origin_graphs: False
+model_type: 'CATBOOST'
+version: 1
+stage: 'STAGING'
