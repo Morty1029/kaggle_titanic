@@ -24,7 +24,7 @@ class EducationFacade:
                        stage=settings.stage)
         mpc.set_model_run(run)
         predictions = processor.get_results()
-        metrics = MetricsFacade(predictions, processor.y_test, path=mpc.get_metrics_path())
+        metrics = MetricsFacade(predictions, processor.split_data.y_test, path=mpc.get_metrics_path())
         metrics.give_me_metrics()
         logger = ModelsLogger(model=processor.model,
                               model_type=processor.model_type)

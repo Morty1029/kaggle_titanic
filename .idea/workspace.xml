@@ -4,34 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ConfigsClasses/Settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConfigsClasses/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Decorators/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Decorators/patterns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Decorators/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enums/ModelStages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enums/Paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enums/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Training/ModelTypes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/ModelPathConstructor.py" afterDir="false" />
+    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="+Decorators&#10;+logging">
+      <change afterPath="$PROJECT_DIR$/Dataset_classes/DatasetSplitter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset_classes/SplitDataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset_classes/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset_classes/Dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset_classes/DatasetVisualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset_classes/DatasetVisualizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Training/EducationFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/EducationFacade.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Training/EducationProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/EducationProcessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training/ModelRun.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelRun.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training/ModelsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelsLogger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/FileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/FileReader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Metrics/MetricsLogger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/catboost_training.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/learn/events.out.tfevents" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/learn_error.tsv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/time_left.tsv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/tmp/cat_feature_index.1d2bbcb8-b58ed1e3-c4c44508-fa472914.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/Settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/Settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +104,20 @@
       <option name="presentableId" value="Default" />
       <updated>1717344603966</updated>
     </task>
+    <task id="LOCAL-00001" summary="+Decorators&#10;+logging">
+      <option name="closed" value="true" />
+      <created>1717680058570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717680058570</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="+Decorators&#10;+logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Decorators&#10;+logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -132,9 +128,9 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Training/EducationFacade.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
