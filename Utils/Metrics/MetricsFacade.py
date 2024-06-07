@@ -1,4 +1,4 @@
-from Utils.Metrics.MetricsLogger import MetricsLogger
+from Utils.DictLogger import DictLogger
 from Utils.Metrics.MetricsPrinter import MetricsPrinter
 from Utils.Metrics.MetricsCounter import MetricsCounter
 
@@ -23,7 +23,6 @@ class MetricsFacade:
         else:
             counter.set_regression_metrics()
             metrics = counter.get_regression_metrics()
-        printer = MetricsPrinter(metrics)
-        logger = MetricsLogger(metrics)
-        printer.print_metrics()
-        logger.metrics_to_json(self.path)
+        MetricsPrinter.print_metrics(metrics)
+        DictLogger.dict_to_json(metrics, self.path)
+

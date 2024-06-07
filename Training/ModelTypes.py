@@ -3,4 +3,4 @@ from catboost import CatBoostClassifier
 
 
 class ModelTypes(Enum):
-    CATBOOST = CatBoostClassifier(iterations=10)
+    CATBOOST = CatBoostClassifier(thread_count=30)

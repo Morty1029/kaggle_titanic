@@ -18,9 +18,7 @@ class Dataset:
         print('Dataset was created')
 
     def set_cols_from(self, path_to_config):
-        file_reader = FileReader()
-        file_reader.set_path(path_to_config)
-        config = file_reader.read_yaml()
+        config = FileReader.read_yaml(path_to_config)
         self.num_cols = config['num_cols']
         self.cat_cols = config['cat_cols']
         self.target_cols = config['target_cols']

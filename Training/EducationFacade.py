@@ -4,28 +4,36 @@ from Training.ModelsLogger import ModelsLogger
 from Training.ModelRun import ModelRun
 from ConfigsClasses.Settings import Settings
 from Utils.ModelPathConstructor import ModelPathConstructor
+from Training.ModelConstructor import ModelConstructor
+from typing import Callable
+from Training.ModelOptimizer import ModelOptimizer
 
 
 class EducationFacade:
-    def __init__(self, dataset, get_val, classification=True):
+    def __init__(self, dataset, get_val, metric: Callable, classification=True):
         self.dataset = dataset
         self.get_val = get_val
         self.classification = classification
+        self.metric = metric
 
     def get_results(self):
-        processor = EducationProcessor(self.dataset)
-        processor.train_model(self.get_val)
-        mpc = ModelPathConstructor()
         settings = Settings()
-        run = ModelRun(model=processor.model,
-                       model_type=processor.model_type,
-                       name=processor.model_type.name,
+        model_object = ModelConstructor.get_model(settings.model_type)
+        run = ModelRun(model_object=model_object,
+                       name=model_object.model_type.name,
                        version=settings.version,
                        stage=settings.stage)
-        mpc.set_model_run(run)
+        optimizer = ModelOptimizer(model_object=model_object,
+                                   dataset=self.dataset,
+                                   metric=self.metric,
+                                   path_to_best_params=ModelPathConstructor.get_params_path(run))
+        optimizer.optimize_model()
+        processor = EducationProcessor(self.dataset, model_object, optimizer.best_params)
+        processor.train_model(self.get_val)
         predictions = processor.get_results()
-        metrics = MetricsFacade(predictions, processor.split_data.y_test, path=mpc.get_metrics_path())
+        metrics = MetricsFacade(predictions=predictions,
+                                y_test=processor.split_data.y_test,
+                                path=ModelPathConstructor.get_metrics_path(run))
         metrics.give_me_metrics()
-        logger = ModelsLogger(model=processor.model,
-                              model_type=processor.model_type)
-        logger.model_to_file(mpc.get_model_path())
+        ModelsLogger.model_to_file(model_object=model_object,
+                                   path=ModelPathConstructor.get_model_path(run))

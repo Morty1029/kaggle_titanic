@@ -1,7 +1,6 @@
 class MetricsPrinter:
-    def __init__(self, metrics: dict):
-        self.metrics = metrics
 
-    def print_metrics(self):
-        for metric, value in self.metrics.items():
+    @staticmethod
+    def print_metrics(metrics_dict: dict):
+        for metric, value in metrics_dict.items():
             print(f'{metric} = {value}\n')

@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="+Decorators&#10;+logging">
-      <change afterPath="$PROJECT_DIR$/Dataset_classes/DatasetSplitter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset_classes/SplitDataset.py" afterDir="false" />
+    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="+DatasetSplitter">
+      <change afterPath="$PROJECT_DIR$/Training/ModelConstructor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Training/ModelObject.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Training/ModelOptimizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigsClasses/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigsClasses/Settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Training/EducationFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/EducationFacade.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Training/EducationProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/EducationProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelRun.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelRun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelTypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelTypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelsLogger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/FileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/FileReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/DictLogger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsPrinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Metrics/MetricsPrinter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/ModelPathConstructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/ModelPathConstructor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/catboost_training.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/learn/events.out.tfevents" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/learn_error.tsv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/time_left.tsv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catboost_info/tmp/cat_feature_index.1d2bbcb8-b58ed1e3-c4c44508-fa472914.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +54,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Dataset.executor": "Run",
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/КириллП/PycharmProjects/kaggle_titanic"
+    "last_opened_file_path": "C:/Users/КириллП/PycharmProjects/Gas_supply_forecasting"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -56,11 +67,11 @@
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\res" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Utils" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\ConfigsClasses" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Enums" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Utils\Metrics" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Training" />
-      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Dataset_classes" />
     </key>
   </component>
   <component name="RunManager">
@@ -112,25 +123,29 @@
       <option name="project" value="LOCAL" />
       <updated>1717680058570</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+DatasetSplitter">
+      <option name="closed" value="true" />
+      <created>1717696579037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717696579037</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+Decorators&#10;+logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Decorators&#10;+logging" />
+    <MESSAGE value="+DatasetSplitter" />
+    <option name="LAST_COMMIT_MESSAGE" value="+DatasetSplitter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Utils/Metrics/MetricsCounter.py</url>
-          <line>16</line>
+          <url>file://$PROJECT_DIR$/ConfigsClasses/Settings.py</url>
+          <line>10</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
