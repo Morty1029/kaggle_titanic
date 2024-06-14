@@ -24,7 +24,7 @@ class ModelOptimizer:
         model_type = self.model_object.model_type
         study = create_study(direction='maximize')
         if model_type == ModelTypes.CATBOOST:
-            study.optimize(self.optimize_catboost, n_trials=50)
+            study.optimize(self.__optimize_catboost, n_trials=100)
         else:
             # TODO
             pass
@@ -32,14 +32,17 @@ class ModelOptimizer:
         if self.path is not None:
             DictLogger().dict_to_json(self.best_params, self.path)
 
-    def optimize_catboost(self, trial):
+    def __optimize_catboost(self, trial):
         params = {
-            'iterations': trial.suggest_int('iterations', 500, 3000),
+            'iterations': trial.suggest_int('iterations', 1000, 3000),
             'learning_rate': trial.suggest_float('learning_rate', 0.01, 1),
-            'depth': trial.suggest_int('depth', 3, 10),
+            'depth': trial.suggest_int('depth', 3, 16),
             'l2_leaf_reg': trial.suggest_float('l2_leaf_reg', 0, 5),
 
         }
+        return self.__trial(params)
+
+    def __trial(self, params):
         split_data = DatasetSplitter(self.dataset).split_dataset(True)
         model = self.model_object.model.copy()
         model.set_params(**params)

@@ -14,3 +14,4 @@ class Settings:
         self.model_type = settings['model_type']
         self.version = settings['version']
         self.stage = settings['stage']
+        self.experiment_name = settings['experiment_name']

@@ -1,7 +1,7 @@
 from Utils.DictLogger import DictLogger
 from Utils.Metrics.MetricsPrinter import MetricsPrinter
 from Utils.Metrics.MetricsCounter import MetricsCounter
-
+import mlflow
 
 class MetricsFacade:
     def __init__(self, predictions,
@@ -14,15 +14,17 @@ class MetricsFacade:
         self.round_to = round_to
         self.classification = classification
         self.path = path
+        self.metrics = {}
 
     def give_me_metrics(self):
         counter = MetricsCounter(self.y_test, self.predictions, self.round_to)
         if self.classification:
             counter.set_classification_metrics()
-            metrics = counter.get_classification_metrics()
+            self.metrics = counter.get_classification_metrics()
         else:
             counter.set_regression_metrics()
-            metrics = counter.get_regression_metrics()
-        MetricsPrinter.print_metrics(metrics)
-        DictLogger.dict_to_json(metrics, self.path)
+            self.metrics = counter.get_regression_metrics()
+        MetricsPrinter.print_metrics(self.metrics)
+        DictLogger.dict_to_json(self.metrics, self.path)
+        mlflow.log_metrics(self.metrics)
 

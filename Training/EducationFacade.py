@@ -1,3 +1,5 @@
+import mlflow
+
 from Training.EducationProcessor import EducationProcessor
 from Utils.Metrics.MetricsFacade import MetricsFacade
 from Training.ModelsLogger import ModelsLogger
@@ -18,22 +20,27 @@ class EducationFacade:
 
     def get_results(self):
         settings = Settings()
-        model_object = ModelConstructor.get_model(settings.model_type)
-        run = ModelRun(model_object=model_object,
-                       name=model_object.model_type.name,
-                       version=settings.version,
-                       stage=settings.stage)
-        optimizer = ModelOptimizer(model_object=model_object,
-                                   dataset=self.dataset,
-                                   metric=self.metric,
-                                   path_to_best_params=ModelPathConstructor.get_params_path(run))
-        optimizer.optimize_model()
-        processor = EducationProcessor(self.dataset, model_object, optimizer.best_params)
-        processor.train_model(self.get_val)
-        predictions = processor.get_results()
-        metrics = MetricsFacade(predictions=predictions,
-                                y_test=processor.split_data.y_test,
-                                path=ModelPathConstructor.get_metrics_path(run))
-        metrics.give_me_metrics()
-        ModelsLogger.model_to_file(model_object=model_object,
-                                   path=ModelPathConstructor.get_model_path(run))
+        mlflow.set_tracking_uri('http://localhost:5000')
+        mlflow.set_experiment(settings.experiment_name)
+        with mlflow.start_run():
+            model_object = ModelConstructor.get_model(settings.model_type)
+            run = ModelRun(model_object=model_object,
+                           name=model_object.model_type.name,
+                           version=settings.version,
+                           stage=settings.stage)
+            optimizer = ModelOptimizer(model_object=model_object,
+                                       dataset=self.dataset,
+                                       metric=self.metric,
+                                       path_to_best_params=ModelPathConstructor.get_params_path(run))
+            optimizer.optimize_model()
+            processor = EducationProcessor(self.dataset, model_object, optimizer.best_params)
+            processor.train_model(self.get_val)
+            predictions = processor.get_results()
+            metrics_facade = MetricsFacade(predictions=predictions,
+                                           y_test=processor.split_data.y_test,
+                                           path=ModelPathConstructor.get_metrics_path(run))
+            metrics_facade.give_me_metrics()
+            ModelsLogger.model_to_file(model_object=model_object,
+                                       path=ModelPathConstructor.get_model_path(run))
+            mlflow.log_params(processor.params)
+            ModelsLogger.model_to_mlflow(model_run=run)
