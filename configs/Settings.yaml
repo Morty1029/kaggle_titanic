@@ -1,5 +1,7 @@
 get_report: False
 draw_origin_graphs: False
+task_type: 'class'
 model_type: 'CATBOOST'
 version: 1
 stage: 'STAGING'
+experiment_name: 'baseline'

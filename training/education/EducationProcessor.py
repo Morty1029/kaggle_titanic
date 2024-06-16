@@ -1,9 +1,7 @@
-from Training.ModelTypes import ModelTypes
-from ConfigsClasses.Settings import Settings
-from Dataset_classes.DatasetSplitter import DatasetSplitter, SplitDataset
-from Training.ModelObject import ModelObject
-from Dataset_classes.Dataset import Dataset
-from Training.ModelConstructor import ModelConstructor
+from dataset_classes.DatasetSplitter import DatasetSplitter, SplitDataset
+from training.model_utils.ModelObject import ModelObject
+from dataset_classes.Dataset import Dataset
+from training.model_utils.ModelConstructor import ModelConstructor
 
 
 class EducationProcessor:

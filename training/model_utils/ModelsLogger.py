@@ -1,6 +1,6 @@
-from Training.ModelTypes import ModelTypes
-from Training.ModelObject import ModelObject
-from Training.ModelRun import ModelRun
+from training.model_utils.ModelTypes import ModelTypes
+from training.model_utils.ModelObject import ModelObject
+from training.model_utils.ModelRun import ModelRun
 import mlflow
 
 

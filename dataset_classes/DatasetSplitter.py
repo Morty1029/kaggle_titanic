@@ -1,7 +1,7 @@
-from Dataset_classes.Dataset import Dataset
+from dataset_classes.Dataset import Dataset
 from sklearn.model_selection import train_test_split
 import random
-from Dataset_classes.SplitDataset import SplitDataset
+from dataset_classes.SplitDataset import SplitDataset
 
 
 class DatasetSplitter:

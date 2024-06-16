@@ -1,11 +1,11 @@
-from Training.ModelConstructor import ModelConstructor
-from Training.ModelObject import ModelObject
-from Dataset_classes.Dataset import Dataset
-from Dataset_classes.DatasetSplitter import DatasetSplitter
-from Training.ModelTypes import ModelTypes
+from training.model_utils.ModelConstructor import ModelConstructor
+from training.model_utils.ModelObject import ModelObject
+from dataset_classes.Dataset import Dataset
+from dataset_classes.DatasetSplitter import DatasetSplitter
+from training.model_utils.ModelTypes import ModelTypes
 from optuna.study import create_study
 from typing import Callable
-from Utils.DictLogger import DictLogger
+from utils.DictLogger import DictLogger
 
 
 class ModelOptimizer:
@@ -23,11 +23,14 @@ class ModelOptimizer:
     def optimize_model(self):
         model_type = self.model_object.model_type
         study = create_study(direction='maximize')
+        optimize_func: Callable
         if model_type == ModelTypes.CATBOOST:
-            study.optimize(self.__optimize_catboost, n_trials=100)
+            optimize_func = self.__optimize_catboost
         else:
             # TODO
+            optimize_func = self.__optimize_catboost
             pass
+        study.optimize(optimize_func, n_trials=100)
         self.best_params = study.best_params
         if self.path is not None:
             DictLogger().dict_to_json(self.best_params, self.path)

@@ -1,4 +1,4 @@
-from Utils.Graphs.GraphDrawer import Graph, GraphDrawer
+from utils.graphs.GraphDrawer import Graph, GraphDrawer
 
 
 class GraphFacade:

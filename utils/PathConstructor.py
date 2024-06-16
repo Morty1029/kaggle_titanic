@@ -1,7 +1,7 @@
-from Training.ModelRun import ModelRun
+from training.model_utils.ModelRun import ModelRun
 
 
-class ModelPathConstructor:
+class PathConstructor:
 
     @staticmethod
     def get_model_path(run: ModelRun) -> str:

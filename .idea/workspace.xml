@@ -4,20 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="+Optimizer&#10;-singleton&#10;+static classes">
+    <list default="true" id="a8a0255b-5345-4a57-9e8d-f4964aac7b12" name="Changes" comment="+MLFlow">
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/graphs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/metrics/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfigsClasses/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigsClasses/Settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training/EducationFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/EducationFacade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training/ModelOptimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelOptimizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training/ModelsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/ModelsLogger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/DictLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/DictLogger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/catboost_training.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/learn/events.out.tfevents" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/learn_error.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/time_left.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catboost_info/tmp/cat_feature_index.1d2bbcb8-b58ed1e3-c4c44508-fa472914.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigsClasses/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_classes/Settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigsClasses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_classes/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset_classes/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_classes/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset_classes/DatasetSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_classes/DatasetSplitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset_classes/DatasetVisualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_classes/DatasetVisualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset_classes/SplitDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_classes/SplitDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset_classes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_classes/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decorators/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorators/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decorators/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorators/patterns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decorators/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorators/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enums/ModelStages.py" beforeDir="false" afterPath="$PROJECT_DIR$/enums/ModelStages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enums/Paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/enums/Paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enums/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/enums/TaskTypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/EducationFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/education/EducationFacade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/EducationProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/education/EducationProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelConstructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelConstructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelObject.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelObject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelOptimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelOptimizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelRun.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelRun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelTypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelTypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/ModelsLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/ModelsLogger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/enums/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/DictLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/DictLogger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/FileReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/FileReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Graphs/Graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/graphs/Graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Graphs/GraphDrawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/graphs/GraphDrawer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Graphs/GraphFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/graphs/GraphFacade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Graphs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/metrics/MetricsCounter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsFacade.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/metrics/MetricsFacade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/MetricsPrinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/metrics/MetricsPrinter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Metrics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/education/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/ModelPathConstructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/PathConstructor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/model_utils/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/Settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/Settings.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,27 +70,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/КириллП/PycharmProjects/Gas_supply_forecasting&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Dataset.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/КириллП/PycharmProjects/Gas_supply_forecasting",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\res" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Training\model_utils" />
+      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Training\education" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Utils" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\ConfigsClasses" />
       <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Enums" />
-      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Utils\Metrics" />
-      <recent name="C:\Users\КириллП\PycharmProjects\kaggle_titanic\Training" />
     </key>
   </component>
   <component name="RunManager">
@@ -131,13 +159,33 @@
       <option name="project" value="LOCAL" />
       <updated>1717772754116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="+MLFlow">
+      <option name="closed" value="true" />
+      <created>1718371156876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718371156876</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+Decorators&#10;+logging" />
     <MESSAGE value="+DatasetSplitter" />
     <MESSAGE value="+Optimizer&#10;-singleton&#10;+static classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Optimizer&#10;-singleton&#10;+static classes" />
+    <MESSAGE value="+MLFlow" />
+    <option name="LAST_COMMIT_MESSAGE" value="+MLFlow" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

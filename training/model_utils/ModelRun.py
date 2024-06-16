@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from Training.ModelObject import ModelObject
-from Enums.ModelStages import ModelStages
+from training.model_utils.ModelObject import ModelObject
+from enums.ModelStages import ModelStages
 
 
 @dataclass

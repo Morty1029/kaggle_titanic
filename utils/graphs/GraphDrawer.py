@@ -1,4 +1,4 @@
-from Utils.Graphs.Graph import Graph
+from utils.graphs.Graph import Graph
 import matplotlib.pyplot as plt
 
 

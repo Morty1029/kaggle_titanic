@@ -1,8 +1,8 @@
-from Training.EducationFacade import EducationFacade
-from Enums.Paths import Paths
-from Dataset_classes.Dataset import Dataset
-from Dataset_classes.DatasetVisualizer import DatasetVisualizer
-from ConfigsClasses.Settings import Settings
+from training.education.EducationFacade import EducationFacade
+from enums.Paths import Paths
+from dataset_classes.Dataset import Dataset
+from dataset_classes.DatasetVisualizer import DatasetVisualizer
+from config_classes.Settings import Settings
 from sklearn.metrics import accuracy_score
 
 
@@ -23,7 +23,7 @@ def get_baseline(dataset: Dataset):
     if SETTINGS.draw_origin_graphs:
         draw_origin_graph(dataset)
     education_facade = EducationFacade(dataset, False, metric=accuracy_score)
-    education_facade.get_results()
+    education_facade.train_model()
 
 
 def draw_origin_graph(dataset):

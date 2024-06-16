@@ -1,6 +1,5 @@
 import seaborn as sns
-from Dataset_classes.Dataset import Dataset
-from Utils.Graphs.GraphFacade import GraphFacade
+from dataset_classes.Dataset import Dataset
 from math import log2
 import matplotlib.pyplot as plt
 
