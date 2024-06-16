@@ -15,6 +15,7 @@ def main():
     if SETTINGS.get_report:
         dataset.get_new_report('res\\report.html')
     get_baseline(dataset)
+    a = 1
 
 
 def get_baseline(dataset: Dataset):
