@@ -13,7 +13,6 @@ cat_cols:
 bool_cols:
   - 'CryoSleep'
   - 'VIP'
-  - 'Transported'
 
 date_cols: []
 

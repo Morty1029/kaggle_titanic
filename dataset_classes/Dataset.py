@@ -2,11 +2,12 @@ import pandas as pd
 from ydata_profiling import ProfileReport
 import webbrowser
 from utils.FileReader import FileReader
+from typing import Union
 
 
 class Dataset:
-    def __init__(self, path):
-        self.df = pd.read_csv(path)
+    def __init__(self):
+        self.df: Union[pd.DataFrame, None] = None
         self.num_cols = []
         self.cat_cols = []
         self.useless_cols = []
@@ -15,7 +16,24 @@ class Dataset:
         self.date_cols = []
         self.path_to_report = ''
         self.report = None
-        print('Dataset was created')
+
+    def __copy__(self):
+        df = None if self.df is None else self.df.copy()
+        dataset = Dataset()
+        dataset.df = df
+        dataset.num_cols = self.num_cols.copy()
+        dataset.cat_cols = self.cat_cols.copy()
+        dataset.useless_cols = self.useless_cols.copy()
+        dataset.target_cols = self.target_cols.copy()
+        dataset.bool_cols = self.bool_cols.copy()
+        dataset.date_cols = self.date_cols.copy()
+        return dataset
+
+    def load_data_from(self, path: str):
+        self.df = pd.read_csv(path)
+
+    def set_data(self, df: pd.DataFrame):
+        self.df = df
 
     def set_cols_from(self, path_to_config):
         config = FileReader.read_yaml(path_to_config)
@@ -50,44 +68,7 @@ class Dataset:
         else:
             print('no data - no report')
 
-    def clear(self):
-        self.delete_useless_cols()
-        self.bool_cols_into_int()
-        self.feel_missing_values_default()
-
-    def bool_cols_into_int(self):
-        if self.df is not None and isinstance(self.df, pd.DataFrame):
-            for col in self.bool_cols:
-                self.bool_col_into_int(col)
-        else:
-            print('no_data')
-            return
-        print('bool values were converted into 1 0')
-
-    def bool_col_into_int(self, col):
-        if self.df is not None and isinstance(self.df, pd.DataFrame):
-            if col is not None:
-                self.df[col] = self.df[col].apply(lambda x: 1 if x else 0)
-            else:
-                print('no col')
-        else:
-            print('no data')
-
-    def int_col_into_bool(self, col):
-        if self.df is not None and isinstance(self.df, pd.DataFrame):
-            if col is not None:
-                self.df[col] = self.df[col].apply(lambda x: x == 1)
-            else:
-                print('no col')
-        else:
-            print('no data')
-
-    def feel_missing_values_default(self):
-        for col in self.bool_cols + self.num_cols:
-            self.df[col] = self.df[col].fillna(0)
-        for col in self.cat_cols:
-            self.df[col] = self.df[col].fillna('skipped')
-        print('missing values were fel by default')
-
-    def delete_useless_cols(self):
-        self.df = self.df.drop(self.useless_cols, axis=1)
+    def get_x_y(self):
+        x = self.df.drop(self.target_cols + self.date_cols, axis=1)
+        y = self.df[self.target_cols]
+        return x, y

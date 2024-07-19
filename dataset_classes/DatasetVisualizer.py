@@ -10,9 +10,7 @@ class DatasetVisualizer:
 
     def draw_pair_counts(self, target_col):
         for col in self.dataset.cat_cols + self.dataset.bool_cols:
-            self.dataset.df[target_col] = self.dataset.df[target_col].apply(lambda x: str(x))
-            sns.countplot(self.dataset.df, x=col, hue=target_col)
-            self.dataset.df[target_col] = self.dataset.df[target_col].apply(lambda x: int(x))
+            sns.countplot(data=self.dataset.df, x=col, hue=target_col)
             plt.show()
 
     def draw_pair_hists(self, target_col):
@@ -20,6 +18,10 @@ class DatasetVisualizer:
             bins = self.__get_number_of_bins(col)
             sns.histplot(data=self.dataset.df, x=col, hue=target_col, multiple='stack', bins=bins, kde=True)
             plt.show()
+
+    def draw_heatmap(self):
+        sns.heatmap(self.dataset.df.corr(), annot=False, fmt=".3f")
+        plt.show()
 
     def __get_number_of_bins(self, col):
         df_col = self.dataset.df[col]

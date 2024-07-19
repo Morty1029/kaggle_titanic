@@ -30,15 +30,15 @@ class ModelOptimizer:
             # TODO
             optimize_func = self.__optimize_catboost
             pass
-        study.optimize(optimize_func, n_trials=100)
+        study.optimize(optimize_func, n_trials=2)
         self.best_params = study.best_params
         if self.path is not None:
             DictLogger().dict_to_json(self.best_params, self.path)
 
     def __optimize_catboost(self, trial):
         params = {
-            'iterations': trial.suggest_int('iterations', 1000, 3000),
-            'learning_rate': trial.suggest_float('learning_rate', 0.01, 1),
+            'iterations': trial.suggest_int('iterations', 10, 200),
+            'learning_rate': trial.suggest_float('learning_rate', 0.001, 0.1),
             'depth': trial.suggest_int('depth', 3, 16),
             'l2_leaf_reg': trial.suggest_float('l2_leaf_reg', 0, 5),
 
@@ -50,7 +50,6 @@ class ModelOptimizer:
         model = self.model_object.model.copy()
         model.set_params(**params)
         additional_params = ModelConstructor.get_additional_params(self.model_object.model_type,
-                                                                   split_data,
                                                                    self.dataset)
         model.fit(split_data.x_train,
                   split_data.y_train,

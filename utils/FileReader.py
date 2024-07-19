@@ -1,4 +1,5 @@
 import yaml
+import json
 
 
 class FileReader:
@@ -15,3 +16,9 @@ class FileReader:
             sql = file.read()
             file.close()
             return sql
+
+    @staticmethod
+    def read_json(path: str) -> dict:
+        with open(path, 'r') as file:
+            some_json = json.load(file)
+        return some_json
